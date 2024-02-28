@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Data Visualization Project 1</title>
+    <link rel="icon" href="data:;base64,iVBORwOKGO=" />
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h1>US Counties</h1>
+      <div class="container">
+        <div class="map1">
+            <p>
+                <label for="attribute">Choose an Attribute:</label>
+                <select name="attribute", id="attribute">
+                    <option value="poverty_perc" label="Poverty Percentage">Poverty Percentage</option>
+                    <option value="median_household_income" label="Median Household Income">Median Household Income</option>
+                    <option value="education_less_than_high_school_percent" label="Education Less Than High School Percentage">Education Less Than High School Percentage</option>
+                    <option value="air_quality" label="Air Quality">Air Quality</option>
+                    <option value="park_access" label="Park Access">Park Access</option>
+                    <option value="percent_inactive" label="Percent Inactive">Percent Inactive</option>
+                    <option value="percent_smoking" label="Percent Smoking">Percent Smoking</option>
+                    <!-- Categorical variable, we can handle this later -->
+                    <!-- <option value="urban_rural_status" label="Urban Rural Status">Urban Rural Status</option> -->
+                    <option value="elderly_percentage" label="Elderly Percentage">Elderly Percentage</option>
+                    <option value="number_of_hospitals" label="Number of Hospitals">Number of Hospitals</option>
+                    <option value="number_of_primary_care_physicians" label="Number of Primary Care Physicians">Number of Primary Care Physicians</option>
+                    <option value="percent_no_heath_insurance" label="Percent No Health Insurance">Percent No Health Insurance</option>
+                    <option value="percent_high_blood_pressure" label="Percent High Blood Pressure">Percent High Blood Pressure</option>
+                    <option value="percent_coronary_heart_disease" label="Percent Coronary Heart Disease">Percent Coronary Heart Disease</option>
+                    <option value="percent_stroke" label="Percent Stroke">Percent Stroke</option>
+                    <option value="percent_high_cholesterol" label="Percent High Cholesterol">Percent High Cholesterol</option>
+                </select>
+            </p>
+            
+            <p>
+                <div id="tooltip1" class="tooltip" style="height: 35px;"></div>
+            </p>
+        </div>
+
+        <div class="map2">
+            <p>
+                <label for="attribute2">Choose an Attribute for Comparison:</label>
+                <select name="attribute2", id="attribute2">
+                    <option value="poverty_perc" label="Poverty Percentage">Poverty Percentage</option>
+                    <option value="median_household_income" label="Median Household Income" selected="selected">Median Household Income</option>
+                    <option value="education_less_than_high_school_percent" label="Education Less Than High School Percentage">Education Less Than High School Percentage</option>
+                    <option value="air_quality" label="Air Quality">Air Quality</option>
+                    <option value="park_access" label="Park Access">Park Access</option>
+                    <option value="percent_inactive" label="Percent Inactive">Percent Inactive</option>
+                    <option value="percent_smoking" label="Percent Smoking">Percent Smoking</option>
+                    <!-- Categorical variable, we can handle this later -->
+                    <!-- <option value="urban_rural_status" label="Urban Rural Status">Urban Rural Status</option> -->
+                    <option value="elderly_percentage" label="Elderly Percentage">Elderly Percentage</option>
+                    <option value="number_of_hospitals" label="Number of Hospitals">Number of Hospitals</option>
+                    <option value="number_of_primary_care_physicians" label="Number of Primary Care Physicians">Number of Primary Care Physicians</option>
+                    <option value="percent_no_heath_insurance" label="Percent No Health Insurance">Percent No Health Insurance</option>
+                    <option value="percent_high_blood_pressure" label="Percent High Blood Pressure">Percent High Blood Pressure</option>
+                    <option value="percent_coronary_heart_disease" label="Percent Coronary Heart Disease">Percent Coronary Heart Disease</option>
+                    <option value="percent_stroke" label="Percent Stroke">Percent Stroke</option>
+                    <option value="percent_high_cholesterol" label="Percent High Cholesterol">Percent High Cholesterol</option>
+                </select>
+            </p>
+            <p>
+                <div id="tooltip2" class="tooltip"  style="height: 35px; width: 350px;"></div>
+            </p>
+        </div>
+            
+        <div class="hist1">
+            <!-- Add an empty legend so the histograms line up with the scatterplot -->
+            <ul class="legend">
+                <li></li>
+            </ul>
+            <div><svg id="hist1svg"></svg></div>
+        </div>
+        <div class="hist2">
+            <!-- Add an empty legend so the histograms line up with the scatterplot -->
+            <ul class="legend">
+                <li></li>
+            </ul>
+            <div><svg id="hist2svg"></svg></div>
+        </div>
+        <div class="scatter">
+            <ul class="legend">
+                <li><span class="legend-e rural"></span> Rural</li>
+                <li><span class="legend-e suburban"></span> Suburban</li>
+                <li><span class="legend-e small-city"></span> Small City</li>
+                <li><span class="legend-e city"></span> City</li>
+            </ul>
+            <div class="margin-right"><svg id="scatterplot"></svg></div>
+            <div id="scatter_tooltip" style="height: 55px;"></div>
+            
+        </div>
+      </div>
+    
+    <script src="js/d3.v6.min.js"></script>
+    <script src="js/topojson.v3.js"></script>
+    <script src="js/choroplethMap.js"></script>
+    <script src="js/scatterplot.js"></script>
+    <script src="js/histogram.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
